@@ -5,13 +5,13 @@ A tool which pulls test case results from Jenkins server. It displays a union of
 
 Usage are: 
 
-	java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name>
+        java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name>
 
 Sample commands are:
 
         java -jar buildstats-1.0-jar-with-dependencies.jar https://builds.apache.org HBase-TRUNK
 
-Sample output:
+Sample output(where 1 means "PASSED", 0 means "NOT RUN AT ALL", -1 means "FAILED"):
 
 Failed Test Cases              3621 3622 3623 3624 3625 3626 3627 3628 3629 3630 3632 3633 3634 3635
 
