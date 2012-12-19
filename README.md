@@ -4,15 +4,16 @@ jenkins-tools
 A tool which pulls test case results from Jenkins server. It displays a union of failed test cases from the last 15(could be less depending on availablity) runs recorded in Jenkins sever and track how each of them are performed for all the last 15 runs(passed, not run or failed)
 
 Usage are: 
+
 	java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name>
 
 Sample commands are:
+
         java -jar buildstats-1.0-jar-with-dependencies.jar https://builds.apache.org HBase-TRUNK
 
 Sample output:
 
 Failed Test Cases              3621 3622 3623 3624 3625 3626 3627 3628 3629 3630 3632 3633 3634 3635
-========================================================
 
 org.apache.hadoop.hbase.catalog.testmetareadereditor.testretrying    1    1   -1    0    1    1    1    1   -1    0    1    1    1    1
 org.apache.hadoop.hbase.client.testadmin.testdeleteeditunknowncolumnfamilyandortable    0    1    1    1   -1    0    1    1    0    1    1    1    1    1
