@@ -1,11 +1,11 @@
 jenkins-tools
 =============
 
-A tool which pulls test case results from Jenkins server. It displays a union of failed test cases from the last 15(could be less depending on availablity) runs recorded in Jenkins sever and track how each of them are performed for all the last 15 runs(passed, not run or failed)
+A tool which pulls test case results from Jenkins server. It displays a union of failed test cases from the last 15(by default and actual number of jobs can be less depending on availablity) runs recorded in Jenkins sever and track how each of them are performed for all the last 15 runs(passed, not run or failed)
 
 Usage are: 
 
-        java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name>
+        java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name> [number of last most recent jobs to check]
 
 Sample commands are:
 

@@ -16,7 +16,7 @@ public class TestResultHistory
     public final static String STATUS_FAILED = "FAILED";
     public final static String STATUS_PASSED = "PASSED";
     public final static String STATUS_FIXED  = "FIXED";
-    public final static int BUILD_HISTORY_NUM = 15;
+    public static int BUILD_HISTORY_NUM = 15;
 
     private JenkinsHttpClient client;
     private String jobName;
@@ -36,6 +36,17 @@ public class TestResultHistory
 
         String apacheHTTPUrl = args[0];
         String jobName = args[1];
+        if(args.length > 2) {
+          int tmpHistoryJobNum = -1;
+          try {
+            tmpHistoryJobNum = Integer.parseInt(args[2]);
+          } catch (NumberFormatException ex) {
+            // ignore
+          }
+          if(tmpHistoryJobNum > 0) {
+            BUILD_HISTORY_NUM = tmpHistoryJobNum;
+          }
+        }
 
         try {
             TestResultHistory buildHistory = new TestResultHistory(apacheHTTPUrl,  jobName, "", "");
