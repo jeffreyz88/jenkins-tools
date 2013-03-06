@@ -3,17 +3,17 @@ jenkins-tools
 
 A tool which pulls test case results from Jenkins server. It displays a union of failed test cases from the last 15(by default and actual number of jobs can be less depending on availablity) runs recorded in Jenkins sever and track how each of them are performed for all the last 15 runs(passed, not run or failed)
 
-Build command:
+Build command(run under folder jenkins-tools):
 
        mvn package
 
 Usage are: 
 
-        java -jar buildstats-1.0-jar-with-dependencies.jar <Jenkins HTTP URL> <Job Name> [number of last most recent jobs to check]
+        java -jar ./buildstats/target/buildstats.jar <Jenkins HTTP URL> <Job Name> [number of last most recent jobs to check]
 
 Sample commands are:
 
-        java -jar buildstats-1.0-jar-with-dependencies.jar https://builds.apache.org HBase-TRUNK
+        java -jar ./buildstats/target/buildstats.jar https://builds.apache.org HBase-TRUNK
 
 Sample output(where 1 means "PASSED", 0 means "NOT RUN AT ALL", -1 means "FAILED"):
 
@@ -38,5 +38,5 @@ org.apache.hadoop.hbase.testdrainingserver.testdrainingserverwithabort    1    1
 org.apache.hadoop.hbase.util.testhbasefsck.testregionshouldnotbedeployed    1    1    1    1    1    1   -1    0   -1    0   -1   -1    0   -1
 
 
-Notes: I've included jenkins-client in the source because I had a small modificatoin in the client source code.
+Notes: I've included jenkins-client in the source because I had a small modificatoin in the original client source code.
 
